@@ -1,0 +1,540 @@
+/* Global Styles */
+/* Basic reset and core styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: #2d3748; /* Darker text for better readability */
+    background-color: #f7fafc; /* Light background */
+    min-height: 100vh; /* Ensure minimum height for sticky footer */
+    display: flex;
+    flex-direction: column;
+}
+
+/* Main container - using flexbox for responsive layout */
+.container {
+    max-width: 1140px;
+    width: 90%; /* More responsive width */
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    flex: 1; /* Allow container to grow */
+}
+
+/* Header & Navigation - modern and responsive */
+.navbar {
+    background-color: #3182ce; /* Primary blue color */
+    padding: 15px 0;
+    position: sticky;
+    top: 0;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    z-index: 1000; /* Ensure navbar stays on top */
+}
+
+.navbar .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: transparent;
+    box-shadow: none;
+    padding: 0 20px;
+}
+
+.navbar-brand {
+    color: #ffffff !important;
+    font-size: 24px;
+    font-weight: bold;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.navbar-brand:hover {
+    color: #ebf8ff !important; /* Light blue on hover */
+}
+
+.navbar-nav {
+    display: flex;
+    list-style: none;
+}
+
+.navbar-nav li {
+    margin-left: 20px;
+}
+
+.navbar-nav li a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 500;
+    padding: 5px 10px;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+}
+
+.navbar-nav li a:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Page Header - clean and modern */
+.page-header {
+    margin-bottom: 30px;
+    border-bottom: 2px solid #e2e8f0;
+    padding-bottom: 15px;
+}
+
+.page-header h1 {
+    margin: 0;
+    color: #2b6cb0; /* Primary color for headers */
+    font-size: 28px;
+    font-weight: 700;
+}
+
+/* Tables - modern and responsive */
+.table-responsive {
+    overflow-x: auto;
+    margin-bottom: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+}
+
+.table {
+    border-collapse: separate;
+    border-spacing: 0;
+    width: 100%;
+    margin-bottom: 0;
+    border-radius: 8px;
+    overflow: hidden; /* Ensures the rounded corners are visible */
+}
+
+.table th {
+    background-color: #4299e1; /* Blue header */
+    color: white;
+    text-align: left;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    font-size: 14px;
+    padding: 16px;
+    position: sticky;
+    top: 0;
+}
+
+.table th, .table td {
+    padding: 16px;
+    border-bottom: 1px solid #e2e8f0;
+    vertical-align: middle;
+}
+
+.table tbody tr:last-child td {
+    border-bottom: none;
+}
+
+.table-hover tbody tr:hover {
+    background-color: #ebf8ff; /* Light blue hover */
+    transition: background-color 0.2s ease;
+}
+
+/* Product row styling */
+.product-row {
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+.product-row:hover {
+    transform: translateX(5px);
+}
+
+.price-column {
+    color: #2b6cb0;
+    font-size: 1.1em;
+}
+
+.action-column {
+    white-space: nowrap;
+    text-align: right;
+}
+
+/* Product count display */
+.product-count {
+    margin-top: 20px;
+    font-size: 14px;
+    color: #718096;
+    display: flex;
+    align-items: center;
+}
+
+.product-count i {
+    margin-right: 5px;
+    color: #4299e1;
+}
+
+/* Make tables responsive on mobile */
+@media screen and (max-width: 768px) {
+    .action-column .btn {
+        display: block;
+        margin: 5px 0;
+        width: 100%;
+    }
+    
+    .table th, .table td {
+        padding: 12px 10px;
+    }
+}
+
+/* Forms - modern and user-friendly */
+.form-group {
+    margin-bottom: 24px;
+    position: relative;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 500;
+    color: #4a5568;
+    transition: color 0.3s ease;
+}
+
+.form-group i {
+    color: #4299e1;
+    margin-right: 5px;
+}
+
+.form-control {
+    display: block;
+    width: 100%;
+    padding: 14px 16px;
+    font-size: 16px;
+    border: 2px solid #e2e8f0;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    background-color: #f8fafc;
+}
+
+.form-control:focus {
+    border-color: #3182ce;
+    outline: 0;
+    box-shadow: 0 0 0 3px rgba(49, 130, 206, 0.15);
+    background-color: #fff;
+}
+
+.form-control:hover:not(:focus) {
+    border-color: #cbd5e0;
+}
+
+textarea.form-control {
+    min-height: 120px;
+    resize: vertical;
+}
+
+.form-text {
+    display: block;
+    margin-top: 5px;
+    font-size: 14px;
+}
+
+.text-muted {
+    color: #718096;
+}
+
+/* Highlight active form field */
+.form-group.active label {
+    color: #3182ce;
+}
+
+/* Responsive form layout */
+@media screen and (min-width: 768px) {
+    form#product-form, form#edit-product-form {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-gap: 20px;
+    }
+    
+    .form-group.full-width {
+        grid-column: 1 / span 2;
+    }
+    
+    .form-actions {
+        grid-column: 1 / span 2;
+    }
+}
+
+/* Form animations */
+@keyframes formFieldFocus {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.02); }
+    100% { transform: scale(1); }
+}
+
+.form-control:focus {
+    animation: formFieldFocus 0.3s ease;
+}
+
+/* Buttons - interactive and visually appealing */
+.btn {
+    display: inline-flex; /* Better alignment for icons */
+    align-items: center;
+    justify-content: center;
+    font-weight: 500;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    cursor: pointer;
+    padding: 10px 18px;
+    font-size: 16px;
+    line-height: 1.5;
+    border-radius: 6px;
+    border: none;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    text-decoration: none;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.08);
+}
+
+/* Button hover and active states */
+.btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.12);
+}
+
+.btn:active {
+    transform: translateY(0);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12);
+}
+
+/* Primary button - blue */
+.btn-primary {
+    color: #fff;
+    background-color: #3182ce; /* Blue */
+    border: 1px solid transparent;
+}
+
+.btn-primary:hover {
+    background-color: #2b6cb0;
+}
+
+.btn-primary:focus {
+    box-shadow: 0 0 0 3px rgba(49, 130, 206, 0.4);
+}
+
+/* Secondary button - gray */
+.btn-secondary {
+    color: #4a5568;
+    background-color: #e2e8f0;
+    border: 1px solid transparent;
+}
+
+.btn-secondary:hover {
+    background-color: #cbd5e0;
+    color: #2d3748;
+}
+
+/* Info button - teal */
+.btn-info {
+    color: #fff;
+    background-color: #4299e1;
+    border: 1px solid transparent;
+}
+
+.btn-info:hover {
+    background-color: #3182ce;
+}
+
+/* Danger button - red */
+.btn-danger {
+    color: #fff;
+    background-color: #f56565;
+    border: 1px solid transparent;
+}
+
+.btn-danger:hover {
+    background-color: #e53e3e;
+}
+
+/* Small button variant */
+.btn-sm {
+    padding: 6px 12px;
+    font-size: 14px;
+    border-radius: 4px;
+}
+
+/* Button groups for form actions */
+.form-actions {
+    display: flex;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+/* Action Buttons - area for primary actions */
+.action-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 24px;
+    gap: 10px;
+}
+
+/* Alerts - improved feedback messages */
+.alert {
+    position: relative;
+    padding: 16px 20px;
+    margin-bottom: 24px;
+    border-left: 5px solid transparent;
+    border-top: 1px solid transparent;
+    border-right: 1px solid transparent;
+    border-bottom: 1px solid transparent;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    animation: fadeIn 0.5s ease-in-out;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.alert i {
+    margin-right: 10px;
+    font-size: 20px;
+}
+
+.alert p {
+    margin: 0;
+    flex-grow: 1;
+}
+
+.alert .alert-link {
+    font-weight: bold;
+    text-decoration: underline;
+    margin-left: 5px;
+}
+
+.alert-success {
+    color: #046c4e;
+    background-color: #def7ec;
+    border-color: #10b981;
+}
+
+.alert-success i {
+    color: #10b981;
+}
+
+.alert-danger {
+    color: #c81e1e;
+    background-color: #fde8e8;
+    border-color: #ef4444;
+}
+
+.alert-danger i {
+    color: #ef4444;
+}
+
+.alert-info {
+    color: #1a56db;
+    background-color: #e1effe;
+    border-color: #3b82f6;
+}
+
+.alert-info i {
+    color: #3b82f6;
+}
+
+.alert-link {
+    color: inherit;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.alert-link:hover {
+    opacity: 0.8;
+}
+
+/* Dismissible alerts */
+.alert-dismissible {
+    padding-right: 40px;
+}
+
+.alert .close-btn {
+    position: absolute;
+    top: 14px;
+    right: 14px;
+    cursor: pointer;
+    font-size: 16px;
+    color: inherit;
+    opacity: 0.5;
+    transition: opacity 0.3s ease;
+    background: none;
+    border: none;
+}
+
+.alert .close-btn:hover {
+    opacity: 1;
+}
+
+/* Footer - modern and sticky */
+footer {
+    margin-top: 50px;
+    padding: 30px 0;
+    background-color: #2d3748;
+    color: #e2e8f0;
+    text-align: center;
+    width: 100%;
+}
+
+.footer-content {
+    max-width: 1140px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+footer p {
+    margin: 0;
+    color: #cbd5e0;
+    font-size: 14px;
+}
+
+/* Footer links */
+footer a {
+    color: #63b3ed;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+footer a:hover {
+    color: #4299e1;
+    text-decoration: underline;
+}
+
+/* Responsive media queries */
+@media (max-width: 576px) {
+    .container {
+        width: 95%;
+        padding: 15px;
+    }
+    
+    .page-header h1 {
+        font-size: 22px;
+    }
+    
+    .btn {
+        padding: 8px 14px;
+        font-size: 14px;
+    }
+    
+    form {
+        display: block;
+    }
+}
